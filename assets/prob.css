@@ -1,0 +1,149 @@
+& when not (@fullScreen) {
+  padding-top: (@paddingTop * 1rem);
+  padding-bottom: (@paddingBottom * 1rem);
+}
+
+& when (@bg-type = 'color') {
+  background-color: @bg-value;
+}
+& when (@bg-type = 'image') {
+  background-image: url(@bg-value);
+}
+/* Centrer le texte des mots-clés */
+.mbr-link {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    padding: 10px 20px;
+}
+
+/* Espacer les sous-catégories */
+.mbr-link strong {
+    display: block;
+    margin: 15px 0 8px;
+    font-size: 15px;
+    color: #1e88e5; /* Bleu doux */
+}
+
+/* Style des mots-clés */
+.mbr-link br + * {
+    display: inline-block;
+    margin: 3px 6px;
+    background-color: #f1f1f1;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 13px;
+    color: #444;
+}
+
+/* Sur mobile */
+@media (max-width: 768px) {
+    .mbr-link {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .mbr-link br + * {
+        margin: 2px 4px;
+        font-size: 12px;
+    }
+}
+
+.mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  &.disabled { display: none; }
+  & when (@bg-type = 'video') {
+    background-image: url(@fallBackImage);
+  }
+}
+
+.container, .container-fluid {
+  @media (max-width: 992px) { padding: 0 16px; }
+  @media (max-width: 768px) { padding: 0 12px; }
+}
+
+& when (@fullWidth) {
+  .container-fluid { padding: 0 40px; }
+}
+
+.title-wrapper {
+  margin-bottom: 40px;
+  text-align: center;
+
+  @media (max-width: 992px) { margin-bottom: 24px; }
+
+  .mbr-section-title {
+    color: #000;
+    margin-bottom: 24px;
+  }
+
+  .mbr-text {
+    color: #000;
+    margin-bottom: 0;
+  }
+}
+
+.item {
+  margin-bottom: 32px;
+
+  &:hover .item-wrapper {
+    border-color: @active;
+    box-shadow: 4px 4px @active;
+  }
+
+  .item-wrapper {
+    padding: 32px;
+    border: 3px solid @border;
+    box-shadow: 4px 4px @border;
+    background-color: @card;
+    border-radius: 32px;
+    transition: all 0.3s ease;
+
+    @media (max-width: 992px) {
+      padding: 20px;
+      border-radius: 24px;
+    }
+
+    .title-wrap {
+      margin-bottom: 16px;
+
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .mbr-iconfont {
+          font-size: 40px;
+          margin-right: 12px;
+          color: @icon;
+        }
+
+        .mbr-card-title {
+          margin-bottom: 0;
+          color: #222;
+        }
+      }
+    }
+
+    .link-wrap {
+      text-align: center;
+
+      &:hover .mbr-link {
+        text-decoration: underline;
+      }
+
+      .mbr-link {
+        color: #003E44;
+        margin-bottom: 0;
+        display: inline-block;
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+html {
+  scroll-behavior: smooth;
+}
+html, body, .main, .stApp {
+    height: 100vh;
+    overflow: hidden;
+}
+/* Enlever l'encadré radio Streamlit */
+.css-1a32fsj, .stRadio > div {
+    flex-direction: row;
+    justify-content: center;
+}
+
+.stRadio label {
+    background-color: #F7F7F7;
+    padding: 12px 24px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 2px solid #FF7F11;
+    font-weight: 600;
+    color: #FF7F11;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.stRadio label:hover {
+    background-color: #FF7F11;
+    color: white;
+}
+
+.stRadio input:checked + div {
+    background-color: #FF7F11 !important;
+    color: white !important;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #FF7F11;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #ffe4c4;
+  text-decoration: underline;
+}
+
+.section {
+  padding: 100px 60px;
+  margin-top: 80px;
+}
+
+.section h2 {
+  color: #FF7F11;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#intro {
+  background: linear-gradient(to bottom right, #222, #555);
+  color: white;
+}
+
+#problematique {
+  background-color: #fff;
+  color: black;
+}
+
+#requete {
+  background-color: #f0f0f0;
+}
