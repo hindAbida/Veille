@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 from pathlib import Path
-import base64  # ✅ Ajout de cet import important
+import base64
 
 def show():
     st.markdown("<h2>📑 Veille Brevet (PDF Visualisation)</h2>", unsafe_allow_html=True)
@@ -29,11 +29,17 @@ def show():
     selected_pdf = st.selectbox("📄 Choisir un PDF :", [f.name for f in pdf_files])
     pdf_path = os.path.join(folder_path, selected_pdf)
 
-    # Lecture du PDF en tant que binaire pour affichage
+    # Lecture du PDF en tant que binaire
     with open(pdf_path, "rb") as f:
-        base64_pdf = f.read()
-        b64 = base64.b64encode(base64_pdf).decode("utf-8")
+        pdf_bytes = f.read()
 
-        # Affichage comme une image scrollable
-        pdf_display = f'<iframe src="data:application/pdf;base64,{b64}" width="100%" height="800px" type="application/pdf"></iframe>'
-        st.markdown(pdf_display, unsafe_allow_html=True)
+    # Bouton de téléchargement fiable
+    st.download_button(
+        label="📥 Télécharger le PDF",
+        data=pdf_bytes,
+        file_name=selected_pdf,
+        mime="application/pdf"
+    )
+
+    # (Optionnel) Petit rappel texte
+    st.markdown("🔒 *Si le PDF ne s'affiche pas dans votre navigateur, utilisez le bouton ci-dessus pour le télécharger.*")
