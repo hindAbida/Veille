@@ -63,7 +63,7 @@ def show():
             "Scopus": "https://app.powerbi.com/reportEmbed?reportId=ae7f28f4-1730-4ed3-a5db-b776361ae0f3&autoAuth=true&ctid=eb12f8ec-35f2-415d-97bf-0e34301876a7&actionBarEnabled=true&reportCopilotInEmbed=true",
             "PubMed": "https://app.powerbi.com/reportEmbed?reportId=37d97e9c-0d45-4e8c-8cad-4348d08a3388&autoAuth=true&ctid=eb12f8ec-35f2-415d-97bf-0e34301876a7&actionBarEnabled=true&reportCopilotInEmbed=true",
             "Web of Science": "https://app.powerbi.com/reportEmbed?reportId=1ffbd18b-8447-4ef1-9f23-b702ad660a94&autoAuth=true&ctid=eb12f8ec-35f2-415d-97bf-0e34301876a7&actionBarEnabled=true&reportCopilotInEmbed=true ",
-            "IEEE": "https://app.powerbi.com/reportEmbed?reportId=37d97e9c-0d45-4e8c-8cad-4348d08a3388&autoAuth=true&ctid=eb12f8ec-35f2-415d-97bf-0e34301876a7&actionBarEnabled=true&reportCopilotInEmbed=true"
+            "IEEE": "https://app.powerbi.com/groups/me/reports/2bc5769e-e6ab-4204-aae3-9e92632f5b8b/2080590ba64590c9be8e?experience=power-bi"
         }
 
         if db_choice in powerbi_links:
